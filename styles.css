@@ -1,0 +1,279 @@
+/* Styles généraux pour tous les écrans */
+body {
+    background-color: #99B6BE;
+    color: #EEB92C;
+    border: 5px solid #EEB92C;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: "Skranji", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 5px solid #422E0D;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: #EEB92C;
+    color: #422E0D;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: none; /* Sera affiché par JavaScript */
+    z-index: 1000;
+    font-family: "Skranji", system-ui;
+}
+
+#popup div {
+    padding-top: 30px; /* Ajoutez cette ligne pour faire descendre le texte */
+    font-size: 14px;
+    text-align: center;
+}
+
+#startButton, #continueButton {
+    padding: 10px 20px;
+    background-color: #EEB92C;
+    color: #422E0D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Skranji", system-ui;
+    font-weight: 700;
+}
+
+#startButton:hover, #continueButton:hover {
+    background-color: #c6a030;
+}
+
+.bounceIn {
+    animation: bounceIn 0.5s;
+}
+
+.fadeOut {
+    animation: fadeOut 1s;
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.3);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+#popupImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.skranji-regular {
+    font-family: "Skranji", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.skranji-bold {
+    font-family: "Skranji", system-ui;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body::before, body::after {
+    content: "";
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: #EEB92C;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+
+body::before {
+    top: 0;
+    left: 0;
+    border-color: #EEB92C;
+}
+
+body::after {
+    bottom: 0;
+    right: 0;
+    border-color: #EEB92C;
+}
+
+body::before, body::after {
+    border-color: #EEB92C;
+}
+
+body::before {
+    content: "";
+    top: 0;
+    left: 0;
+    border-top-width: 2px;
+    border-left-width: 2px;
+}
+
+body::after {
+    content: "";
+    bottom: 0;
+    right: 0;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+}
+
+#playSoundButton {
+    display: none;
+    padding: 10px 20px;
+    background-color: #EEB92C;
+    color: #422E0D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Skranji", system-ui;
+    font-weight: 700;
+    margin-top: -79%; /* Ajustez la valeur pour déplacer le bouton vers le haut */
+
+}
+
+#playSoundButton:hover {
+    background-color: #c6a030;
+}
+
+
+/* Media queries pour les téléphones portables */
+@media (max-width: 600px) {
+    body {
+        border: 5px solid #EEB92C;
+        padding: 5px;
+    }
+
+    #popup {
+        width: 80%;
+        height: 80%;
+        padding: 10px;
+        color: #EEB92C;
+        background: #EEB92C;
+    }
+
+    #popup div {
+        padding-top: 23px; /* Ajustez cette valeur pour les téléphones portables */
+        font-size: 14px; /* Réduire la taille du texte pour les téléphones portables */
+        color: #422E0D;
+        margin-left: -3%;
+        text-align: center;
+    }
+
+    #startButton {
+        margin-right: 0; /* Réinitialisez la marge droite */
+        border-radius: 5px; /* Réinitialisez le rayon de bordure */
+        padding: 10px; /* Réduisez le rembourrage */
+        background-size: 200% 100%; /* Réglez la taille du dégradé à deux fois la largeur du bouton */
+        background-position: right; /* Définissez la position de départ du dégradé à droite */
+        transition: background-position 0.5s; /* Ajoutez une transition pour une animation fluide */
+    }
+
+    /* Ajoutez une animation de survol pour le bouton */
+    #startButton:hover {
+        background-position: left; /* Changez la position du dégradé au survol */
+    }
+
+    #popupImage {
+        width: 100%;
+        height: auto;
+    }
+
+    body::before, body::after {
+        content: "";
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        background-color: #EEB92C;
+        box-sizing: border-box;
+        border: 2px solid transparent;
+    }
+    
+    body::before {
+        top: 0;
+        left: 0;
+        border-color: #EEB92C;
+    }
+    
+    body::after {
+        bottom: 0;
+        right: 0;
+        border-color: #EEB92C;
+    }
+    
+    body::before, body::after {
+        border-color: #EEB92C;
+    }
+    
+    body::before {
+        content: "";
+        top: 0;
+        left: 0;
+        border-top-width: 2px;
+        border-left-width: 2px;
+    }
+    
+    body::after {
+        content: "";
+        bottom: 0;
+        right: 0;
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+    }
+
+    #continueButton {
+        display: none;
+    }
+
+    #playSoundButton {
+        display: none;
+        padding: 10px 20px;
+        background-color: #EEB92C;
+        color: #422E0D;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: "Skranji", system-ui;
+        font-weight: 700;
+        margin-top: -195%; /* Ajustez la valeur pour déplacer le bouton vers le haut */
+        padding: 9px;
+    
+    }
+    
+    #playSoundButton:hover {
+        background-color: #c6a030;
+    }
+}
